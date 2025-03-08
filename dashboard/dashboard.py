@@ -2,9 +2,15 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+
 
 # Load data dari CSV
-data = pd.read_csv(r'D:\0LATIHAN\DBS\Analisis data dengan Python\submission\dashboard\main_data.csv')
+# Menentukan path file secara dinamis
+file_path = os.path.join(os.path.dirname(__file__), "main_data.csv")
+
+# Membaca data dari file CSV
+data = pd.read_csv(file_path)
 
 # Judul Dashboard
 st.title('Dashboard Penjualan dan Pelanggan')
