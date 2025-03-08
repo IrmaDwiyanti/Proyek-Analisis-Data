@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load data dari CSV
-data = pd.read_csv('main_data.csv')
+data = pd.read_csv(r'D:\0LATIHAN\DBS\Analisis data dengan Python\submission\dashboard\main_data.csv')
 
 # Judul Dashboard
 st.title('Dashboard Penjualan dan Pelanggan')
