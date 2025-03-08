@@ -5,7 +5,7 @@ Proyek ini adalah dashboard interaktif untuk menganalisis data produk, metode pe
 🚀 Instalasi dan Menjalankan Proyek
 
 1️. Clone Repository
-git clone https://github.com/username/repository-name.git
+git clone [https://github.com/username/repository-name.git](https://github.com/IrmaDwiyanti/Proyek-Analisis-Data.git)
 cd repository-name
 
 2️. Instal Dependensi
