@@ -26,7 +26,7 @@ else:
     data_filtered = data
 
 # Menampilkan data yang telah difilter berdasarkan metode pembayaran
-st.subheader(f'Data dengan Metode Pembayaran: {metode_pembayaran}')
+st.subheader(f'Filter Data dengan Metode Pembayaran: {metode_pembayaran}')
 st.dataframe(data_filtered)
 
 # Menampilkan statistik deskriptif
