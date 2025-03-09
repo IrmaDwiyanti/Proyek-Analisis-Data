@@ -4,20 +4,30 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-
 # Load data dari CSV
-# Menentukan path file secara dinamis
 file_path = os.path.join(os.path.dirname(__file__), "main_data.csv")
-
-# Membaca data dari file CSV
 data = pd.read_csv(file_path)
 
 # Judul Dashboard
 st.title('Dashboard Penjualan dan Pelanggan')
 
-# Menampilkan data dalam bentuk tabel
+# Menampilkan data utama dalam bentuk tabel
 st.subheader('Data Kategori Produk, Metode Pembayaran, Kota, dan Provinsi')
 st.dataframe(data)
+
+# Menambahkan filter pada sidebar untuk memilih metode pembayaran
+st.sidebar.header("Filter Berdasarkan Metode Pembayaran")
+metode_pembayaran = st.sidebar.selectbox("Pilih Metode Pembayaran", ["Semua"] + data["Metode Pembayaran"].unique().tolist())
+
+# Mengambil data berdasarkan metode pembayaran yang dipilih
+if metode_pembayaran != "Semua":
+    data_filtered = data[data["Metode Pembayaran"] == metode_pembayaran]
+else:
+    data_filtered = data
+
+# Menampilkan data yang telah difilter berdasarkan metode pembayaran
+st.subheader(f'Data dengan Metode Pembayaran: {metode_pembayaran}')
+st.dataframe(data_filtered)
 
 # Menampilkan statistik deskriptif
 st.subheader('Statistik Deskriptif')
